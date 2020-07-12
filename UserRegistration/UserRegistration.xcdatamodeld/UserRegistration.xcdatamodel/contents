@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Car" representedClassName="Car" syncable="YES" codeGenerationType="class">
+        <attribute name="number" optional="YES" attributeType="String"/>
+        <relationship name="carOf" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="owner" inverseEntity="User"/>
+    </entity>
     <entity name="User" representedClassName=".User" syncable="YES" codeGenerationType="class">
+        <attribute name="avatar" optional="YES" attributeType="Binary"/>
         <attribute name="login" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="password" attributeType="String"/>
+        <attribute name="surname" optional="YES" attributeType="String"/>
+        <relationship name="owner" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Car" inverseName="carOf" inverseEntity="Car"/>
     </entity>
     <elements>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="Car" positionX="189.05859375" positionY="73.58203125" width="128" height="73"/>
     </elements>
 </model>
